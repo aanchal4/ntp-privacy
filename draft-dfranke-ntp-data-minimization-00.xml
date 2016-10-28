@@ -30,6 +30,21 @@
         <uri>https://www.dfranke.us</uri>
       </address>
     </author>
+<author fullname="Aanchal Malhotra" initials="A." surname="Malhotra">
+<organization>Boston University </organization>
+
+<address>
+<postal>
+<street>111 Cummington St</street>
+<city>Boston, MA</city>
+<region/>
+<code>02215</code>
+
+<country>United States</country>
+</postal>
+<email>aanchal4@bu.edu</email>
+</address>
+</author>
     <date/>
     <abstract>
       <t>
@@ -43,23 +58,23 @@
   <middle>
     <section title="Introduction">
       <t>
-        Network Time Protocol packets, as specified by <xref
+        Network Time Protocol (NTP) packets, as specified by <xref
         target="RFC5905">RFC 5905</xref>, carry a great deal of
         information about the state of the NTP daemon which
         transmitted them. In the case of mode 4 packets (responses
-        sent from server to client), as well as in broadcast and
-        symmetric modes, most of this information is essential for
+        sent from server to client), as well as in broadcast (mode 5) and
+        symmetric peering modes (mode 1/2), most of this information is essential for
         accurate and reliable time synchronizaton. However, in mode 3
-        packets (requests sent from client to server), these fields
+        packets (requests sent from client to server), most of these fields
         serve no purpose. Server implementations never need to inspect
         them, and they can achieve nothing by doing so. Populating
-        these fields with accurate information is harmful to privacy
+        these fields with accurate information is harmful to privacy of clients
         because it allows a passive observer to fingerprint clients
         and track them as they move across networks.
       </t>
       <t>
         This memo updates RFC 5905 to redact unnecessary data from
-        mode 3 packets. It calls for no changes on the server side,
+        mode 3 packets. This is a fully backwards-compatible proposal. It calls for no changes on the server side,
         and clients which implement these updates will remain fully
         interoperable with existing servers.
       </t>
@@ -82,7 +97,7 @@
           <t>
             The first octet, which contains the leap indicator,
             version number, and mode fields, SHALL be set to 0x23 (LI
-            = 0, VN = 4, Mode = 3).
+            = 0, VN = 4, Mode = 3). The poll field SHALL be set as is.
           </t>
           <t>
             The Transmit Timestamp field SHALL be set uniformly at
@@ -91,7 +106,7 @@
             guidance on the generation of random values.
           </t>
           <t>
-            All other header fields, specifically the Stratum, Poll,
+            All other header fields, specifically the Stratum,
             Precision, Root Delay, Root Dispersion, Reference ID,
             Reference Timestamp, Origin Timestamp, and Receive
             Timestamp, SHALL be set to zero.
@@ -177,8 +192,7 @@
     </references>
     <section title="Acknowledgements">
       <t>
-        The author thanks Prof. Sharon Goldberg, Miroslav Lichvar, and
-        Aanchal Malhotra for calling attention to the issues addressed
+        The author thanks Prof. Sharon Goldberg, Miroslav Lichvar for calling attention to the issues addressed
         in this memo.
       </t>
     </section>
