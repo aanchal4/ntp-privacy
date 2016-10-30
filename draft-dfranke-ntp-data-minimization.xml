@@ -74,8 +74,9 @@
       </t>
       <t>
         This memo updates RFC 5905 to redact unnecessary data from
-        mode 3 packets. This is a fully backwards-compatible proposal. It calls for no changes on the server side,
-        and clients which implement these updates will remain fully
+        mode 3 packets. This is a fully backwards-compatible
+        proposal. It calls for no changes on the server side, and
+        clients which implement these updates will remain fully
         interoperable with existing servers.
       </t>
     </section>
@@ -197,10 +198,10 @@
   <back>
     <references title="Normative References">
       &rfc2119;
-      &rfc4086;
       &rfc5905;
     </references>
     <references title="Informative References">
+      &rfc4086;
       &rfc6528;
       &rfc6973;
     </references>
