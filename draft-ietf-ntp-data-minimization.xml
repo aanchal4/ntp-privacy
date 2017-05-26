@@ -8,7 +8,7 @@
 <!ENTITY rfc6973 PUBLIC '' 'http://xml2rfc.ietf.org/public/rfc/bibxml/reference.RFC.6973.xml'> <!--Privacy Considerations-->
 
 ]>
-<rfc docName="draft-dfranke-ntp-data-minimization-02"
+<rfc docName="draft-ietf-ntp-data-minimization-00"
      category="std"
      updates="5905"
      xml:lang="en">
@@ -30,20 +30,18 @@
         <uri>https://www.dfranke.us</uri>
       </address>
     </author>
-<author fullname="Aanchal Malhotra" initials="A." surname="Malhotra">
-<organization>Boston University </organization>
-
-<address>
-<postal>
-<street>111 Cummington St</street>
-<city>Boston, MA</city>
-<region/>
-<code>02215</code>
-
-<country>United States</country>
-</postal>
-<email>aanchal4@bu.edu</email>
-</address>
+    <author fullname="Aanchal Malhotra" initials="A." surname="Malhotra">
+      <organization>Boston University</organization>
+      <address>
+        <postal>
+          <street>111 Cummington St</street>
+          <city>Boston</city>
+          <region>MA/</region>
+          <code>02215</code>
+          <country>United States</country>
+        </postal>
+        <email>aanchal4@bu.edu</email>
+      </address>
 </author>
     <date/>
     <abstract>
@@ -111,10 +109,13 @@
             specified by RFC 5905, or else MAY be set to zero.
           </t>
           <t>
-            All other header fields, specifically the Stratum,
-            Precision, Root Delay, Root Dispersion, Reference ID,
-            Reference Timestamp, Origin Timestamp, and Receive
-            Timestamp, SHOULD be set to zero.
+            The Precision field SHOULD be set to 0x20.
+          </t>
+          <t>
+            All other header fields, specifically the Stratum, Root
+            Delay, Root Dispersion, Reference ID, Reference Timestamp,
+            Origin Timestamp, and Receive Timestamp, SHOULD be set to
+            zero.
           </t>
         </list>
       </t>
