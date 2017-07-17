@@ -221,10 +221,8 @@
            the NTP Client Data Minimization recommendations described in this
            document.
            <list style="hanging">
-               <t hangText="OpenNTPD:    ">
-                    Henning Brauer pioneered these NTP data minimization
-                    techniques in June 2004 as part of an NTP implementation
-                    for the OpenBSD Project.
+               <t>
+                   OpenNTPD
                </t>
            </list>
        </t>
@@ -242,8 +240,14 @@
     </references>
     <section title="Acknowledgements">
       <t>
-        The authors thank Prof. Sharon Goldberg and Miroslav Lichvar
-        for calling attention to the issues addressed in this memo.
+        The authors would like to gratefully acknowledge Henning Brauer for
+        pioneering NTP data minimization techniques as early as <eref target="http://cvsweb.openbsd.org/cgi-bin/cvsweb/src/usr.sbin/ntpd/client.c?rev=1.1">June 2004</eref> as
+        part of an NTP implementation for the OpenBSD Project. 
+      </t>
+      <t>
+        The authors would like to thank Prof. Sharon Goldberg and Miroslav
+        Lichvar for encouraging standardisation of the approach described in
+        this document.
       </t>
     </section>
   </back>
